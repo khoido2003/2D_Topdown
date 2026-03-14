@@ -12,6 +12,9 @@ public class SaveController : MonoBehaviour
 
     private string saveLocation;
 
+    [SerializeField]
+    private InventoryController inventoryController;
+
     private void Awake()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
@@ -26,9 +29,12 @@ public class SaveController : MonoBehaviour
         {
             playerPos = player.position,
             mapBoundary = confiner.BoundingShape2D.name,
+            inventorySaveData = inventoryController.GetInventoryItem(),
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+
+        Debug.Log("Saved!!!!");
     }
 
     public void LoadGame()
@@ -40,6 +46,8 @@ public class SaveController : MonoBehaviour
         }
 
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+
+        inventoryController.SetInventoryItem(saveData.inventorySaveData);
 
         player.position = saveData.playerPos;
 

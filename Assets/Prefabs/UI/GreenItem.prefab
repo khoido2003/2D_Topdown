@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8720820213428408059}
   - component: {fileID: 3340687653492302892}
   - component: {fileID: 6207090851827977623}
+  - component: {fileID: 8582201968595890585}
   m_Layer: 5
-  m_Name: Item
+  m_Name: GreenItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,3 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e478cdad6d62c4781c1890dd579f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler
+--- !u!114 &8582201968595890585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5577493700764688975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcfc5d4c569776449b6b6c28e0a27d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  ID: 0
