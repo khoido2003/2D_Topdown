@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3433412787861191471, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 619517781, guid: 00972284c0f66e1428dc915ce572ca11, type: 3}
     - target: {fileID: 3868789101223437496, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -91,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 5577493700764688975, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
       propertyPath: m_Name
       value: HeartItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582201968595890585, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
+      propertyPath: ID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8720820213428408059, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
       propertyPath: m_Sprite
