@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   ID: 2
+  Name: Green Potion
 --- !u!212 &3433412787861191471
 SpriteRenderer:
   serializedVersion: 2

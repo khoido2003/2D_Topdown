@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: ID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8582201968595890585, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
+      propertyPath: Name
+      value: Heart Potion
+      objectReference: {fileID: 0}
     - target: {fileID: 8720820213428408059, guid: a81d7713f30240d47991bc29842ad9c7, type: 3}
       propertyPath: m_Sprite
       value: 
