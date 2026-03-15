@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 231623379}
   - component: {fileID: 231623380}
   m_Layer: 5
-  m_Name: ItemPopupCollector
+  m_Name: ItemPopupConntroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,6 +730,125 @@ MonoBehaviour:
   popupPrefab: {fileID: 6556131227000175200, guid: db5105791e1bb274784cf7d9dd9221c2, type: 3}
   maxPopup: 4
   popupDuration: 3
+--- !u!1 &242430680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242430681}
+  - component: {fileID: 242430683}
+  - component: {fileID: 242430682}
+  - component: {fileID: 242430685}
+  - component: {fileID: 242430684}
+  m_Layer: 5
+  m_Name: HotbarController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &242430681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242430680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1131004681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 42, y: -458.5}
+  m_SizeDelta: {x: -616, y: -943}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &242430682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242430680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &242430683
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242430680}
+  m_CullTransparentMesh: 1
+--- !u!114 &242430684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242430680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881998682276d4048b5ab12c15391e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HotbarUIController
+  hotbarPanel: {fileID: 242430680}
+  slotPrefab: {fileID: 5508281264318403349, guid: c4182d3261eb6384cb408e7af1b7be10, type: 3}
+  slotCount: 10
+  itemDictionary: {fileID: 2020454449}
+--- !u!114 &242430685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242430680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &274556377
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274556378}
   m_Layer: 0
-  m_Name: Item
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,7 +873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274556377}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -764,7 +883,7 @@ Transform:
   - {fileID: 1943708886}
   - {fileID: 1875517921}
   - {fileID: 1461958181}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1301417657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277618349
 GameObject:
@@ -2607,6 +2726,7 @@ MonoBehaviour:
   player: {fileID: 455185816}
   confiner: {fileID: 277618353}
   inventoryController: {fileID: 870173140}
+  hotbarController: {fileID: 242430684}
 --- !u!114 &870173140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,6 +3221,7 @@ RectTransform:
   - {fileID: 715909680}
   - {fileID: 774263208}
   - {fileID: 231623376}
+  - {fileID: 242430681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -25349,6 +25470,7 @@ Transform:
   - {fileID: 1221343099}
   - {fileID: 1391756890}
   - {fileID: 1453348002}
+  - {fileID: 274556378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391756889
@@ -27440,5 +27562,4 @@ SceneRoots:
   - {fileID: 1792868357}
   - {fileID: 685339755}
   - {fileID: 870173138}
-  - {fileID: 274556378}
   - {fileID: 1131004681}

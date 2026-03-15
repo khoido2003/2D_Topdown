@@ -15,6 +15,9 @@ public class SaveController : MonoBehaviour
     [SerializeField]
     private InventoryController inventoryController;
 
+    [SerializeField]
+    private HotbarUIController hotbarController;
+
     private void Awake()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
@@ -30,6 +33,7 @@ public class SaveController : MonoBehaviour
             playerPos = player.position,
             mapBoundary = confiner.BoundingShape2D.name,
             inventorySaveData = inventoryController.GetInventoryItem(),
+            hotbarSaveData = hotbarController.GetHotbarItem(),
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -48,6 +52,7 @@ public class SaveController : MonoBehaviour
         SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
         inventoryController.SetInventoryItem(saveData.inventorySaveData);
+        hotbarController.SetHotbarItem(saveData.hotbarSaveData);
 
         player.position = saveData.playerPos;
 
