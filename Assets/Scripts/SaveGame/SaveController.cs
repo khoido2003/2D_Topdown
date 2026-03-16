@@ -56,6 +56,9 @@ public class SaveController : MonoBehaviour
         {
             SaveGame();
 
+            inventoryController.SetInventoryItem(new List<InventorySaveData>());
+            hotbarController.SetHotbarItem(new List<InventorySaveData>());
+
             DynamicMapUIController.Instance?.GenerateMap();
             return;
         }

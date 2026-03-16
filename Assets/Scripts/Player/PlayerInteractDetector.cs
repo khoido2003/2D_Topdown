@@ -19,6 +19,11 @@ public class PlayerInteractDetector : MonoBehaviour
         {
             Debug.Log("Open chest");
             interactableInRange?.Interact();
+
+            if (!interactableInRange.CanInteract())
+            {
+                interactionIcon.SetActive(false);
+            }
         }
     }
 
