@@ -56,6 +56,8 @@ public class SaveController : MonoBehaviour
 
         player.position = saveData.playerPos;
 
+        MapUIController.Instance?.HighlightArea(saveData.mapBoundary);
+
         confiner.BoundingShape2D = GameObject
             .Find(saveData.mapBoundary)
             .GetComponent<PolygonCollider2D>();
