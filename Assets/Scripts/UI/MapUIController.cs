@@ -42,9 +42,6 @@ public class MapUIController : MonoBehaviour
         }
 
         Image currentArea = mapImages.Find(x => x.name == areaName);
-        Image playerIcon = mapImages.Find(x => x.name == "Icon");
-
-        playerIcon.color = new Color(1f, 1f, 1f, 1f);
 
         if (currentArea != null)
         {

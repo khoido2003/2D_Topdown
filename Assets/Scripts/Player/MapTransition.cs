@@ -28,6 +28,8 @@ public class MapTransition : MonoBehaviour
             confiner2D.BoundingShape2D = mapBoundary;
 
             MapUIController.Instance?.HighlightArea(mapBoundary.name);
+
+            DynamicMapUIController.Instance?.UpdateCurrentArea(mapBoundary.name);
         }
     }
 

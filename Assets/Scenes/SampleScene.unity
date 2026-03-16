@@ -741,12 +741,12 @@ GameObject:
   - component: {fileID: 240061377}
   - component: {fileID: 240061378}
   m_Layer: 5
-  m_Name: MapUIController
+  m_Name: ManualMapUIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &240061377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2114,6 +2114,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1515443324}
+  - {fileID: 1483632897}
+  - {fileID: 956308978}
   m_Father: {fileID: 1248432683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2840,6 +2842,7 @@ Transform:
   - {fileID: 715909680}
   - {fileID: 240061377}
   - {fileID: 2020454447}
+  - {fileID: 1621215272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &870173139
@@ -3123,13 +3126,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956308977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 741656059}
-  m_Father: {fileID: 1515443324}
+  m_Father: {fileID: 616272867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26660,6 +26663,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481323534}
   m_CullTransparentMesh: 1
+--- !u!1 &1483632896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483632897}
+  m_Layer: 5
+  m_Name: DynamcMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1483632897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483632896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 616272867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1489552928
 GameObject:
   m_ObjectHideFlags: 0
@@ -26814,7 +26852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515443324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26829,7 +26867,6 @@ RectTransform:
   m_Children:
   - {fileID: 1277479193}
   - {fileID: 1335482176}
-  - {fileID: 956308978}
   m_Father: {fileID: 616272867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -27021,6 +27058,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579097988}
   m_CullTransparentMesh: 1
+--- !u!1 &1621215271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621215272}
+  - component: {fileID: 1621215273}
+  m_Layer: 0
+  m_Name: DynamicMapUIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1621215272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621215271}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 870173138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621215273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621215271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d96ef3a5db28d244a4080071ade002b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicMapUIController
+  mapParent: {fileID: 1483632897}
+  areaPrefab: {fileID: 9111052701606444228, guid: ba787960d08d8b043b2fb1b22df8d8ec, type: 3}
+  playerIcon: {fileID: 956308978}
+  defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  currentColor: {r: 0, g: 1, b: 0, a: 1}
+  mapBounds: {fileID: 1792868356}
+  initArea: {fileID: 49105105}
+  mapScale: 10
+  mapAreas: []
 --- !u!1 &1652485503
 GameObject:
   m_ObjectHideFlags: 0
@@ -27952,7 +28042,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 455185816}
   - {fileID: 1301417657}
-  - {fileID: 1792868357}
   - {fileID: 685339755}
+  - {fileID: 1792868357}
   - {fileID: 870173138}
   - {fileID: 1131004681}

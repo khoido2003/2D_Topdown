@@ -46,6 +46,8 @@ public class SaveController : MonoBehaviour
         if (!File.Exists(saveLocation))
         {
             SaveGame();
+
+            DynamicMapUIController.Instance?.GenerateMap();
             return;
         }
 
@@ -56,10 +58,13 @@ public class SaveController : MonoBehaviour
 
         player.position = saveData.playerPos;
 
-        MapUIController.Instance?.HighlightArea(saveData.mapBoundary);
-
-        confiner.BoundingShape2D = GameObject
+        PolygonCollider2D savedBoundary = GameObject
             .Find(saveData.mapBoundary)
             .GetComponent<PolygonCollider2D>();
+
+        confiner.BoundingShape2D = savedBoundary;
+
+        //MapUIController.Instance?.HighlightArea(saveData.mapBoundary);
+        DynamicMapUIController.Instance?.GenerateMap(savedBoundary);
     }
 }
