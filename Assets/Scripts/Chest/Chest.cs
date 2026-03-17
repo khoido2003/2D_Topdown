@@ -36,6 +36,8 @@ public class Chest : MonoBehaviour, IInteractable
     {
         SetOpened(true);
 
+        SoundEffectManager.Instance.Play("Chest", false);
+
         if (itemPrefab)
         {
             GameObject droppedItem = Instantiate(
