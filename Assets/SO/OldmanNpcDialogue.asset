@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eba681d616ba949b90920bdaf5239b, type: 3}
+  m_Name: OldmanNpcDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NpcDiaglogue
+  npcName: OldMan
+  npcPortrait: {fileID: -7527145504033472756, guid: 53c373988086d6244b4bdd638d33eadd, type: 3}
+  dialogueLines:
+  - Hello there, traveler!
+  - I might need your help in the  future!
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 5c0d58c8d61b5d447af1353fdcca25c6, type: 3}
+  voicePitch: 1.6
+  autoProgressLines: 0100
+  autoProgressDelay: 1.5

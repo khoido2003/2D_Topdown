@@ -11,6 +11,9 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField]
     private AudioSource randomPitchAudioSource;
 
+    [SerializeField]
+    private AudioSource voiceAudioSource;
+
     private SoundEffectLibrary soundEffectLibrary;
 
     [SerializeField]
@@ -61,10 +64,17 @@ public class SoundEffectManager : MonoBehaviour
     {
         audioSource.volume = volume;
         randomPitchAudioSource.volume = volume;
+        voiceAudioSource.volume = volume;
     }
 
     public void OnValueChanged()
     {
         SetVolume(sfxSlider.value);
+    }
+
+    public void PlayVoice(AudioClip audioClip, float pitch = 1f)
+    {
+        voiceAudioSource.pitch = pitch;
+        voiceAudioSource.PlayOneShot(audioClip);
     }
 }
