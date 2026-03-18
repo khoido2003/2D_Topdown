@@ -1733,6 +1733,8 @@ GameObject:
   - component: {fileID: 455185818}
   - component: {fileID: 455185821}
   - component: {fileID: 455185822}
+  - component: {fileID: 455185824}
+  - component: {fileID: 455185823}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1816,7 +1818,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 2272523360759174bb79b85e3731dd48, type: 3}
+  m_Sprite: {fileID: 4035959289877228764, guid: ea896ea9039245f49ba10f601e875fbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2032,6 +2034,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractDetector
   interactionIcon: {fileID: 692217450}
+--- !u!114 &455185823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455185813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
+  m_CategoryHash: 1.8625731e-11
+  m_labelHash: 2.6263963e-13
+  m_SpriteKey: 0
+  m_SpriteHash: 1027422969
+--- !u!114 &455185824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455185813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 57e06994cba2b474aa3286b6b0e7ca45, type: 3}
 --- !u!1 &478243435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,10 +2349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: d5ea1925eadb8e44ca2e5bffcc048048, type: 2}
-  dialoguePanel: {fileID: 741627816}
-  dialogueText: {fileID: 1362807838}
-  nameText: {fileID: 1573814023}
-  portraitImage: {fileID: 216144740}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,6 +3389,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741656058}
   m_CullTransparentMesh: 1
+--- !u!1 &758380333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758380334}
+  - component: {fileID: 758380335}
+  m_Layer: 0
+  m_Name: DialogueController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758380334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758380333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 870173138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758380335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758380333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddd0311a222ceb40be1ee3e2bb3ff4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueController
+  dialoguePanel: {fileID: 741627816}
+  dialogueText: {fileID: 1362807838}
+  nameText: {fileID: 1573814023}
+  portraitImage: {fileID: 216144740}
 --- !u!1 &774263207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3857,7 @@ Transform:
   - {fileID: 240061377}
   - {fileID: 2020454447}
   - {fileID: 1621215272}
+  - {fileID: 758380334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &870173139
@@ -4383,10 +4460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: ceb4856ee0d209d4c8efa74da0104f80, type: 2}
-  dialoguePanel: {fileID: 741627816}
-  dialogueText: {fileID: 1362807838}
-  nameText: {fileID: 1573814023}
-  portraitImage: {fileID: 216144740}
 --- !u!61 &1104828040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29444,7 +29517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666291384}
   m_Layer: 0
-  m_Name: WaypointParent
+  m_Name: NpcGirlWaypointParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewNpcDialogue", menuName = "Game/NPC/Dialogue")]
@@ -11,5 +12,18 @@ public class NpcDialogue : ScriptableObject
     public float voicePitch = 1f;
 
     public bool[] autoProgressLines;
+    public bool[] endProgressLines;
+
     public float autoProgressDelay = 1.5f;
+
+    public DialogueChoice[] choices;
+}
+
+[Serializable]
+public class DialogueChoice
+{
+    public int dialogueIndex;
+    public string[] choices;
+
+    public int[] nextDialogueIndexes;
 }

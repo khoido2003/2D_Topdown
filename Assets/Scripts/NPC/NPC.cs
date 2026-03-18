@@ -5,23 +5,20 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+    private int dialogueIndex;
+
     [SerializeField]
     private NpcDialogue dialogueData;
 
-    [SerializeField]
-    private GameObject dialoguePanel;
-
-    [SerializeField]
-    private TextMeshProUGUI dialogueText,
-        nameText;
-
-    [SerializeField]
-    private Image portraitImage;
-
-    private int dialogueIndex;
+    private DialogueController dialogueController;
 
     private bool isTyping,
         isDialogueActive;
+
+    private void Start()
+    {
+        dialogueController = DialogueController.Instance;
+    }
 
     public bool CanInteract()
     {
@@ -52,12 +49,35 @@ public class NPC : MonoBehaviour, IInteractable
         if (isTyping)
         {
             StopAllCoroutines();
-            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            dialogueController.SetDialogue(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
-        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
+
+        // Clear choices
+        dialogueController.ClearChoices();
+
+        if (
+            dialogueData.endProgressLines.Length > dialogueIndex
+            && dialogueData.endProgressLines[dialogueIndex]
+        )
         {
-            StartCoroutine(TypeLine());
+            EndDialogue();
+            return;
+        }
+
+        foreach (DialogueChoice dialogueChoice in dialogueData.choices)
+        {
+            if (dialogueChoice.dialogueIndex == dialogueIndex)
+            {
+                //
+                DisplayChoices(dialogueChoice);
+                return;
+            }
+        }
+
+        if (++dialogueIndex < dialogueData.dialogueLines.Length)
+        {
+            DisplayCurrentLine();
         }
         else
         {
@@ -70,29 +90,39 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.npcName);
-        portraitImage.sprite = dialogueData.npcPortrait;
+        dialogueController.SetNPCInfo(dialogueData.npcName, dialogueData.npcPortrait);
+        dialogueController.ShowDialogueUI(true);
 
-        dialoguePanel.SetActive(true);
         PauseGame.SetPaused(true);
 
-        StartCoroutine(TypeLine());
+        DisplayCurrentLine();
     }
 
     IEnumerator TypeLine()
     {
-        isTyping = false;
-        dialogueText.SetText("");
+        isTyping = true;
+
+        dialogueController.SetDialogue("");
 
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
-            dialogueText.text += letter;
+            dialogueController.SetDialogue(dialogueController.dialogueText.text + letter);
 
             SoundEffectManager.Instance.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
 
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
+
         isTyping = false;
+
+        foreach (DialogueChoice dialogueChoice in dialogueData.choices)
+        {
+            if (dialogueChoice.dialogueIndex == dialogueIndex)
+            {
+                DisplayChoices(dialogueChoice);
+                yield break; // stop here, wait for player choice
+            }
+        }
 
         if (
             dialogueData.autoProgressLines.Length > dialogueIndex
@@ -104,12 +134,37 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
+    private void DisplayChoices(DialogueChoice choice)
+    {
+        for (int i = 0; i < choice.choices.Length; i++)
+        {
+            int nextIndex = choice.nextDialogueIndexes[i];
+
+            dialogueController.CreateChoiceBtn(choice.choices[i], () => ChooseOption(nextIndex));
+        }
+    }
+
+    void ChooseOption(int nextIndex)
+    {
+        dialogueIndex = nextIndex;
+        dialogueController.ClearChoices();
+
+        DisplayCurrentLine();
+    }
+
+    void DisplayCurrentLine()
+    {
+        StopAllCoroutines();
+        StartCoroutine(TypeLine());
+    }
+
     public void EndDialogue()
     {
         StopAllCoroutines();
         isDialogueActive = false;
-        dialogueText.SetText("");
-        dialoguePanel.SetActive(false);
+        dialogueController.SetDialogue("");
+        dialogueController.ShowDialogueUI(false);
+
         PauseGame.SetPaused(false);
     }
 }
