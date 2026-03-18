@@ -17,8 +17,17 @@ MonoBehaviour:
   dialogueLines:
   - Hello there, traveler!
   - I might need your help in the  future!
+  - Thanks!
+  - Oh....
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 5c0d58c8d61b5d447af1353fdcca25c6, type: 3}
   voicePitch: 1.6
   autoProgressLines: 0100
+  endProgressLines: 00000101
   autoProgressDelay: 1.5
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0200000003000000
