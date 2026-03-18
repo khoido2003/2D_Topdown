@@ -15,10 +15,9 @@ public class PlayerInteractDetector : MonoBehaviour
 
     public void OnInteract(InputValue input)
     {
-        if (input.isPressed)
+        if (input.isPressed && interactableInRange != null)
         {
-            Debug.Log("Open chest");
-            interactableInRange?.Interact();
+            interactableInRange.Interact();
 
             if (!interactableInRange.CanInteract())
             {
